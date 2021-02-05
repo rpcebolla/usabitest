@@ -17,6 +17,25 @@
     </div>
     <div>
       <h2>This is the checkout mockpage</h2>
+      <script>/**
+        * Sending custom variables as one object.
+        * This by default will allow you to add any additional values if you resend the customObj.
+        */
+       // Define an object to hold the custom variables
+       var customObj = {};
+       // Define and set variables
+       var usernameU = "Rocio";
+       var specieU = "human";
+       var ageU = 32;
+       // Fill the customObj with the earlier created custom variables
+       customObj.Username = usernameU;
+       customObj.Specie = sessionU;
+       customObj.Age = ageU;
+       //Send custom variables by assigning the customObj to the 'custom' object in Usabilla
+       window.usabilla_live('data', {
+           'custom': customObj
+       });
+  </script>
     </div>
 
     <!-- begin usabilla live embed code -->
@@ -161,10 +180,9 @@
     <script type="text/javascript">
       window.usabilla_live("data", {
         custom: {
-          Username: Rocio,
-          species: human,
-          age: 32,
-          alive: true,
+          "Username": username,
+          "Specie": specie,
+          "Age": age,
         },
       });
     </script>
